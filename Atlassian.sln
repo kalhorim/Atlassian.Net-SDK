@@ -1,0 +1,98 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atlassian.Jira", "Atlassian.Jira\Atlassian.Jira.csproj", "{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atlassian.Jira.Test", "Atlassian.Jira.Test\Atlassian.Jira.Test.csproj", "{DF544F47-7EE3-469A-B68E-18D3096B3362}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atlassian.Jira.Test.Integration", "Atlassian.Jira.Test.Integration\Atlassian.Jira.Test.Integration.csproj", "{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atlassian.Jira.Test.Integration.Setup", "Atlassian.Jira.Test.Integration.Setup\Atlassian.Jira.Test.Integration.Setup.csproj", "{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{680E73AB-49DF-4A17-B7EB-107F273A2E0E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+		start-jira-with-data.bat = start-jira-with-data.bat
+		stop-jira.bat = stop-jira.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{A7546F7E-EF28-4B2B-9F85-CD104DEE61F7}"
+	ProjectSection(SolutionItems) = preProject
+		docs\change-history.md = docs\change-history.md
+		docs\how-to-configure-issue-fields-to-fetch.md = docs\how-to-configure-issue-fields-to-fetch.md
+		docs\how-to-connect-using-oauth.md = docs\how-to-connect-using-oauth.md
+		docs\how-to-debug-problems.md = docs\how-to-debug-problems.md
+		docs\how-to-handle-gdpr-changes.md = docs\how-to-handle-gdpr-changes.md
+		docs\how-to-run-the-integration-tests.md = docs\how-to-run-the-integration-tests.md
+		docs\how-to-use-custom-fields.md = docs\how-to-use-custom-fields.md
+		docs\how-to-use-the-sdk.md = docs\how-to-use-the-sdk.md
+		docs\README.md = docs\README.md
+		docs\reference-appveyor-build-script.md = docs\reference-appveyor-build-script.md
+		docs\reference-jql.md = docs\reference-jql.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{438EB0CF-D781-4F1B-9BD3-B33638AA8D1D}.Release|x86.ActiveCfg = Release|Any CPU
+		{DF544F47-7EE3-469A-B68E-18D3096B3362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF544F47-7EE3-469A-B68E-18D3096B3362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF544F47-7EE3-469A-B68E-18D3096B3362}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DF544F47-7EE3-469A-B68E-18D3096B3362}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DF544F47-7EE3-469A-B68E-18D3096B3362}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DF544F47-7EE3-469A-B68E-18D3096B3362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF544F47-7EE3-469A-B68E-18D3096B3362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF544F47-7EE3-469A-B68E-18D3096B3362}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DF544F47-7EE3-469A-B68E-18D3096B3362}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DF544F47-7EE3-469A-B68E-18D3096B3362}.Release|x86.ActiveCfg = Release|Any CPU
+		{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9F922D1C-0EDA-493F-8E05-F9B90EAC0A3C}.Release|x86.ActiveCfg = Release|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Debug|x86.Build.0 = Debug|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Release|x86.ActiveCfg = Release|Any CPU
+		{59EF77DF-1A5D-48AC-BC98-523C6BBAC288}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEACE0D1-1D86-45D4-B196-AB2EDCA8E4BC}
+	EndGlobalSection
+EndGlobal
