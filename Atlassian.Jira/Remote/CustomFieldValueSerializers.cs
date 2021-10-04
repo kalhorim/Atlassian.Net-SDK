@@ -46,6 +46,17 @@ namespace Atlassian.Jira.Remote
             return JArray.FromObject(values.Select(v => new JObject(new JProperty(_propertyName, v))).ToArray());
         }
     }
+    public class ObjectSerializer : ICustomFieldValueSerializer
+    {
+        public string[] FromJson(JToken json)
+        {
+            return JsonConvert.DeserializeObject<string[]>(json.ToString());
+        }
+        public JToken ToJson(string[] values)
+        {
+            return JArray.FromObject(values.Select(s => JObject.Parse(s)));
+        }
+    }
 
     public class FloatCustomFieldValueSerializer : ICustomFieldValueSerializer
     {

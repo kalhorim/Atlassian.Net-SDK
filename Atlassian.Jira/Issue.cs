@@ -438,7 +438,7 @@ namespace Atlassian.Jira
 
                 if (customField != null && customField.Values != null && customField.Values.Count() > 0)
                 {
-                    return customField.Values[0];
+                    return customField.Values[0].ToString();
                 }
                 return null;
             }

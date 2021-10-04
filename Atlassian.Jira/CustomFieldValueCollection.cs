@@ -41,7 +41,10 @@ namespace Atlassian.Jira
         {
             return this.Add(fieldName, new string[] { fieldValue });
         }
-
+        public CustomFieldValueCollection Add(string fieldName, object[] fieldValue)
+        {
+            return this.Add(fieldName, new [] { fieldValue });
+        }
         /// <summary>
         /// Add a custom field by name with an array of values
         /// </summary>
@@ -51,7 +54,10 @@ namespace Atlassian.Jira
         {
             return this.Add(fieldName, fieldValues, new MultiStringCustomFieldValueSerializer());
         }
-
+        public CustomFieldValueCollection AddArray(string fieldName, params object[] fieldValues)
+        {
+            return this.Add(fieldName, fieldValues, new ObjectSerializer());
+        }
         /// <summary>
         /// Add a cascading select field.
         /// </summary>
@@ -84,7 +90,7 @@ namespace Atlassian.Jira
         /// </summary>
         /// <param name="fieldName">The name of the custom field as defined in JIRA</param>
         /// <param name="fieldValues">The values of the field</param>
-        public CustomFieldValueCollection Add(string fieldName, string[] fieldValues, ICustomFieldValueSerializer serializer = null)
+        public CustomFieldValueCollection Add(string fieldName, object[] fieldValues, ICustomFieldValueSerializer serializer = null)
         {
             var fieldId = GetCustomFieldId(fieldName);
             this.Items.Add(new CustomFieldValue(fieldId, fieldName, _issue) { Values = fieldValues, Serializer = serializer });
@@ -117,7 +123,7 @@ namespace Atlassian.Jira
                 var parentOption = fieldValue.Values.Length > 0 ? fieldValue.Values[0] : null;
                 var childOption = fieldValue.Values.Length > 1 ? fieldValue.Values[1] : null;
 
-                result = new CascadingSelectCustomField(fieldName, parentOption, childOption);
+                result = new CascadingSelectCustomField(fieldName, parentOption.ToString(), childOption.ToString());
             }
 
             return result;
@@ -203,7 +209,7 @@ namespace Atlassian.Jira
                 .Select(field => new RemoteFieldValue()
                 {
                     id = field.Id,
-                    values = field.Values
+                    values = field.Values.Select(s=>s.ToString()).ToArray()
                 });
 
             return Task.FromResult(fieldValues.ToArray());

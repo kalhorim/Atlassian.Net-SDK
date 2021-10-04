@@ -1689,7 +1689,7 @@ namespace Atlassian.Jira.Remote
     {
         public string customfieldId { get; set; }
         public string key { get; set; }
-        public string[] values { get; set; }
+        public object[] values { get; set; }
 
         [JsonIgnore]
         public ICustomFieldValueSerializer serializer { get; set; }

@@ -122,15 +122,15 @@ namespace Atlassian.Jira.Remote
 
                         if (this._customFieldSerializers.ContainsKey(customFieldType))
                         {
-                            jToken = this._customFieldSerializers[customFieldType].ToJson(customField.values);
+                            jToken = this._customFieldSerializers[customFieldType].ToJson(customField.values.Select(s => JsonConvert.SerializeObject(s)).ToArray());
                         }
                         else if (customField.serializer != null)
                         {
-                            jToken = customField.serializer.ToJson(customField.values);
+                            jToken = customField.serializer.ToJson(customField.values.Select(s => JsonConvert.SerializeObject(s)).ToArray());
                         }
                         else if (customField.values.Length > 0)
                         {
-                            jToken = JValue.CreateString(customField.values[0]);
+                            jToken = JValue.CreateString(JsonConvert.SerializeObject(customField.values[0]));
                         }
                         else
                         {

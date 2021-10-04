@@ -27,7 +27,7 @@ namespace Atlassian.Jira
         /// <summary>
         /// The values of the custom field
         /// </summary>
-        public string[] Values { get; set; }
+        public object[] Values { get; set; }
 
         /// <summary>
         /// Id of the custom field as defined in JIRA
