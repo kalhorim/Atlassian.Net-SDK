@@ -43,7 +43,7 @@ namespace Atlassian.Jira
         }
         public CustomFieldValueCollection Add(string fieldName, object[] fieldValue)
         {
-            return this.Add(fieldName, new [] { fieldValue });
+            return this.Add(fieldName, new[] { fieldValue }, null);
         }
         /// <summary>
         /// Add a custom field by name with an array of values
@@ -209,7 +209,7 @@ namespace Atlassian.Jira
                 .Select(field => new RemoteFieldValue()
                 {
                     id = field.Id,
-                    values = field.Values.Select(s=>s.ToString()).ToArray()
+                    values = field.Values.Select(s => s.ToString()).ToArray()
                 });
 
             return Task.FromResult(fieldValues.ToArray());
