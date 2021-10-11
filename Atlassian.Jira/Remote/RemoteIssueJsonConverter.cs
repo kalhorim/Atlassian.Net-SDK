@@ -122,15 +122,25 @@ namespace Atlassian.Jira.Remote
 
                         if (this._customFieldSerializers.ContainsKey(customFieldType))
                         {
-                            jToken = this._customFieldSerializers[customFieldType].ToJson(customField.values.Select(s => JsonConvert.SerializeObject(s)).ToArray());
+                            if (customField.values.All(a => a is string[]))
+                                jToken = this._customFieldSerializers[customFieldType].ToJson(customField.values.Select(s => string.Join("", (string[])s)).ToArray());
+                            else
+                                jToken = this._customFieldSerializers[customFieldType].ToJson(customField.values.Select(s => JsonConvert.SerializeObject(s)).ToArray());
+
                         }
                         else if (customField.serializer != null)
                         {
-                            jToken = customField.serializer.ToJson(customField.values.Select(s => JsonConvert.SerializeObject(s)).ToArray());
+                            if (customField.values.All(a => a is string[]))
+                                jToken = customField.serializer.ToJson(customField.values.Select(s => string.Join("", (string[])s)).ToArray());
+                            else
+                                jToken = customField.serializer.ToJson(customField.values.Select(s => JsonConvert.SerializeObject(s)).ToArray());
                         }
                         else if (customField.values.Length > 0)
                         {
-                            jToken = JValue.CreateString(JsonConvert.SerializeObject(customField.values[0]));
+                            if (customField.values.All(a => a is string[]))
+                                jToken = JValue.CreateString(string.Join("", (string[])customField.values[0]));
+                            else
+                                jToken = JValue.CreateString(JsonConvert.SerializeObject(customField.values[0]));
                         }
                         else
                         {
