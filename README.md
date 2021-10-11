@@ -7,16 +7,20 @@ So, for more information, visit the primary site [(Atlassian.Net SDK)](https://b
 
 # Change List for this repo
 
-- Sync with 12.4.0
+- Solve [Issue #586 expected Object](https://bitbucket.org/farmas/atlassian.net-sdk/issues/586/expected-object)
 
-- Issue [Issue #586](https://bitbucket.org/farmas/atlassian.net-sdk/issues/586/expected-object)
-	Solution [Jira API - Insight object customfield](https://community.atlassian.com/t5/Jira-Service-Management/Jira-API-Insight-object-customfield/qaq-p/1276723)
-	Some Custome fields In Insight have problem to save. For example, you can face with 'expected Object' Or 'data was not an array' errors.
-	creating overload of AddArray to get object array. for example:
+	By this solution [Jira API - Insight object customfield](https://community.atlassian.com/t5/Jira-Service-Management/Jira-API-Insight-object-customfield/qaq-p/1276723)
+
+	Some custom Insight fields have 'expected Object' or 'data was not an array' when saving.
+
+	I create overload for AddArray method to get object array. for example:
 	
 	```
 	issue.CustomFields.AddArray("InsightFieldName", new { key = CustomInsightId });
 	```
+
+- Sync with 12.4.0
+
 
 # Test Environment and docker
 
